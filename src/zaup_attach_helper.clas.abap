@@ -91,7 +91,7 @@ CLASS ZAUP_ATTACH_HELPER IMPLEMENTATION.
     DATA: ls_table  TYPE ty_table,
           ls_xtable TYPE ty_xtable.
 
-*    lv_url = |https://my405385-api.s4hana.cloud.sap:443/sap/opu/odata/sap/API_CV_ATTACHMENT_SRV/GetAllOriginals?BusinessObjectTypeName='{ sap_object }'&LinkedSAPObjectKey='{ object_id }'|.
+*    lv_url = |https://myxxxxxx-api.s4hana.cloud.sap:443/sap/opu/odata/sap/API_CV_ATTACHMENT_SRV/GetAllOriginals?BusinessObjectTypeName='{ sap_object }'&LinkedSAPObjectKey='{ object_id }'|.
 
     " STEP 1: Istanza HTTP CLIENT per recuperare lista allegati
     TRY.
@@ -110,8 +110,8 @@ CLASS ZAUP_ATTACH_HELPER IMPLEMENTATION.
 
 
         http_client->get_http_request( )->set_authorization_basic(
-            i_username = 'SERVICE_API_USER'
-            i_password = '5o8^a35&YZ2RIxS%n*!#'
+            i_username = 'ABAP_USER'
+            i_password = 'xxxxxxxxxxxxxxxxxxxx'
         ).
 
       CATCH cx_http_dest_provider_error.
@@ -158,8 +158,8 @@ CLASS ZAUP_ATTACH_HELPER IMPLEMENTATION.
 *
 
           http_client_att->get_http_request( )->set_authorization_basic(
-              i_username = 'SERVICE_API_USER'
-              i_password = '5o8^a35&YZ2RIxS%n*!#'
+              i_username = 'ABAP_USER'
+              i_password = 'xxxxxxxxxxxxxxxxxxxx'
           ).
 
           "set request method and execute request
